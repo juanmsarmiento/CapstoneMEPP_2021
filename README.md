@@ -1,7 +1,7 @@
-## Caracterización de palmicultores en minucipios seleccionados del Departamento del Cesar
+## Análisis georreferenciado de la oferta y demanda de programas y servicios para la juventud en Bogotá
 
 Juan Manuel Sarmiento Medina <br>
-28-05-2021
+06-12-2022
 
 ![Capstone.png](https://github.com/juanmsarmiento/CapstoneMEPP_2021/blob/main/images/Capstone.png)
 
@@ -64,23 +64,19 @@ Determinar si hay evidencia de que las UPZ con mayor número de jóvenes que ni 
 
 - Posible desconexión entre la demanda del tramo 2 y la oferta de servicios y programas. Esta desconexión es especialmente dramática en las localidades de Usme, Ciudad Bolívar, San Cristóbal y Bosa
 
-A continuación, se muestran solo algunas de las gráficas, para consultarlas todas, igresar [Aquí](./images)
+A continuación, se muestran solo algunas de las gráficas, para consultarlas todas, igresar [Aquí](https://github.com/juanmsarmiento/CapstoneMEPP_2021/blob/main/An%C3%A1lisis%20Georreferenciado%20de%20la%20oferta%20y%20demanda%20de%20programas%20y%20servicios%20para%20la%20juventud%20en%20Bogot%C3%A1.pdf)
 
 
-![edad_palmicultores.png](https://github.com/juanmsarmiento/MCPP_juan.sarmiento/blob/master/Proyecto%20final/images/edad_palmicultores.png)
+![Número de sedes de iniciativas para Jóvenes por Localidad .png](https://github.com/juanmsarmiento/CapstoneMEPP_2021/blob/main/images/N%C3%BAmero%20de%20sedes%20de%20iniciativas%20para%20J%C3%B3venes%20por%20Localidad%C2%A0.png)
 
-![sexo_palmicultores.png](https://github.com/juanmsarmiento/MCPP_juan.sarmiento/blob/master/Proyecto%20final/images/sexo_palmicultores.png)
+![Número de sedes de iniciativas por cada 1000 jóvenes por Localidad .png](https://github.com/juanmsarmiento/CapstoneMEPP_2021/blob/main/images/N%C3%BAmero%20de%20sedes%20de%20iniciativas%C2%A0por%20cada%201000%20j%C3%B3venes%C2%A0por%20Localidad%C2%A0.png)
 
-![hijos_palmicultores.png](https://github.com/juanmsarmiento/MCPP_juan.sarmiento/blob/master/Proyecto%20final/images/hijos_palmicultores.png)
+![Gráfico de dispersión oferta de iniciativas y jóvenes con potencial por localidad .png](https://github.com/juanmsarmiento/CapstoneMEPP_2021/blob/main/images/Gr%C3%A1fico%20de%20dispersi%C3%B3n%20oferta%20de%20iniciativas%20y%20j%C3%B3venes%20con%20potencial%20por%20localidad%C2%A0.png)
 
-![vivprop_palmicultores.png](https://github.com/juanmsarmiento/MCPP_juan.sarmiento/blob/master/Proyecto%20final/images/vivprop_palmicultores.png)
+![Gráfico de dispersión oportunidades de formación educación media y jóvenes desconectados de educación media por localidad .png](https://github.com/juanmsarmiento/CapstoneMEPP_2021/blob/main/images/Gr%C3%A1fico%20de%20dispersi%C3%B3n%20oportunidades%20de%20formaci%C3%B3n%C2%A0educaci%C3%B3n%C2%A0media%20y%20j%C3%B3venes%20desconectados%20de%C2%A0educaci%C3%B3n%C2%A0media%C2%A0por%20localidad%C2%A0.png)
 
-![regsalud_palmicultores.png](https://github.com/juanmsarmiento/MCPP_juan.sarmiento/blob/master/Proyecto%20final/images/regsalud_palmicultores.png)
+![Gráfico de dispersión oportunidades de formación educación posmedia y jóvenes desconectados de educación posmedia por UPZ .png](https://github.com/juanmsarmiento/CapstoneMEPP_2021/blob/main/images/Gr%C3%A1fico%20de%20dispersi%C3%B3n%20oportunidades%20de%20formaci%C3%B3n%20educaci%C3%B3n%20posmedia%20y%20j%C3%B3venes%20desconectados%20de%20educaci%C3%B3n%20posmedia%20por%20UPZ%C2%A0.png)
 
-![disper_palmicultores.png](https://github.com/juanmsarmiento/MCPP_juan.sarmiento/blob/master/Proyecto%20final/images/disper_palmicultores.png)
-
-![victimas_palmicultores.png](https://github.com/juanmsarmiento/MCPP_juan.sarmiento/blob/master/Proyecto%20final/images/victimas_palmicultores.png)
-
-![wordcloud_dificultades.png](https://github.com/juanmsarmiento/MCPP_juan.sarmiento/blob/master/Proyecto%20final/images/wordcloud_dificultades.png)
+![Gráfico de dispersión oportunidades para el acceso al empleo formal y jóvenes desconectados del mercado laboral por UPZ .png](https://github.com/juanmsarmiento/CapstoneMEPP_2021/blob/main/images/Gr%C3%A1fico%20de%20dispersi%C3%B3n%20oportunidades%20para%20el%20acceso%20al%20empleo%20formal%20y%20j%C3%B3venes%20desconectados%20del%20mercado%20laboral%20por%20UPZ%C2%A0.png)
 
 -------
