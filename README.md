@@ -7,85 +7,62 @@ Juan Manuel Sarmiento Medina <br>
 
 ## Descripción y Motivación
 
-El desarrollo rural es uno de los principales objetivos de la política de Estado en Colombia. Diferentes organizaciones públicas y privadas han impulsado programas y políticas que tienen como objetivo mejorar la calidad de vida de la población rural en el país. En este contexto, Palmas del Cesar S.A., una empresa dedicada a la extración de aceite del cultivo de palma africana, ha dedicado recursos y esfuerzos para conocer a los proveedores de palma, los cuales son campesinos dedicados al cultivo de la misma. En el 2020, Palmas del Cesar S.A. adelantó una serie de entrevistas a palmicultores de los municipios de San Martín, Río de Oro y San Alberto, con el objetivo de conocer las características sociales, productivas y demográfica de los palmicultores de la región. 
 
-Este proyecto tabula, limpia y analiza las 144 encuestas con 293 variables realizadas a los palmicultores, con el objetivo de producir estadísticas y gráficas descriptivas que sirvan para entender las características de los campesinos. En este orden de ideas, se plantea la pregunta ¿Cuáles son las características demográficas y productivas de los palmicultores proveedores de Palmas del Cesar S.A.?
+En este proyecto, se analiza y georreferencia la oferta y demanda de sedes de iniciativas para jóvenes de
+entre 14 y 28 años en Bogotá D.C. Este análisis permite obtener, de forma detallada, información respecto
+a qué Unidades de Planeación Zonal (UPZ) y Localidades de la ciudad de Bogotá sufren de mayores
+necesidades respecto a la oferta iniciativas para jóvenes. Así mismo, permite cruzar la información con la
+cantidad de jóvenes que necesitan estas iniciativas. Las pregunta principal a responder es ¿Cuál es la correlación entre la oferta de servicios públicos y privados a jóvenes y la problemática de los jóvenes que no estudian ni trabajan o están en la informalidad en Bogotá?
 
 Las subpreguntas que guian el estudio son: 
 
-- ¿Cómo se distribuye la edad de los palmicultores?
+- ¿Dónde se evidencia una mayor o menor concentración de servicios o programas sociales para jóvenes en Bogotá?
 
-- ¿Cómo se distribuyen los palmicultores en términos de sexo?
+- ¿Las zonas con mayor problemática de jóvenes que no estudian ni trabajan tienen una baja cobertura de servicios y programas sociales para los jóvenes?
 
-- ¿Cómo se componen las familias de los palmicultores?
+- ¿Cuáles son las zonas de atención prioritaria para focalizar servicios o programas sociales para jóvenes?
 
-- ¿Cuáles son las características de las viviendas de los palmicultores?
-
-- ¿Cómo se distribuyen los palmicultores en términos de regímenes de salud?
-
-- ¿Cuál es la relación entre la la cantidad de hijos y el nivel educativo? 
-
-- ¿De qué forma se han visto afectados los palmicultores por el conflicto armado?
-
-- ¿Cuáles son las principales preocupaciones de los palmicultores respecto al cultivo?
-
-Estas preguntas serán respondidas a través del análisis de los datos de las encuestas, apoyandose en distintos métodos de programación que permitirán extraer la información necesaria. Cabe resaltar que la encuesta recolecta muchos más datos que los que se necesitarán para responder estas preguntas. Sin embargo, dado que la motivación planteada es exploratoria: concoer las principales características de los palmicultores, no se considera necesario ser exhaustivo en cada una de las variables.
+Para responder estas preguntas, primero se levanta la información de las sedes de iniciativas para jóvenes en toda Bogotá D.C., la cual es clasificada según las categorías de análisis propuestas en el Modelo de Empleo Inclusivo para Población Vulnerable. Así mismo, es georreferenciada a través de un código desarrollado en Python, apoyandose librerías de JSON y el API de Google Maps, con el propósito de determinar a qué UPZ y localidad pertenece cada sede. En segundo lugar, se sistematizan los datos provenientes de la Encuesta Multipropósito 2017, para encontrar la cantidad y distribución de los jóvenes que necesitan de estas iniciativas en cada UPZ y localidad en Bogotá D.C. Con esta información, se pasa a realizar estadísticas descriptivas y correlaciones en STATA, con el objetivo de describir de forma más precisa el comportamiento de la oferta y la demanda. Por último, con la información recolecta, se crea una visualización en Power BI que permite observar de forma fácil e interactiva los territorios a priorizar a través de mapas y estadísticas.
 
 ## Objetivo General
 
-El objetivo de este proyecto es tabular, limpiar, consolidar y analizar la información de las encuestas realizas por Palmas del Cesar S.A. a 144 palmicultores en los municipios de San Martín, San Alberto y Río de Oro.
+Determinar si hay evidencia de que las UPZ con mayor número de jóvenes que ni estudian ni trabajan están relacionadas con zonas donde es menor la oferta de servicios y programas para jóvenes en ámbitos educativos, de intermediación laboral, culturales, recreativos, entre otros.
 
 ### Objetivos específicos
 
-1. Agrupar todas las entrevistas en un solo documento scrapeable 
-2. Tabular cada una de las respuestas de cada entrevista en distintas variables
-3. Limpiar las variables resultantes de posibles errores de tabulación
-4. Consolidar todas las variables en una base de datos
-5. Analizar las variables necesarias para responder las preguntas planteadas
-
-
-## Métodos:
-1. Agrupar las entrevistas en un solo documento
-  - Las entrevistas se contenían en el archivo [Encuestas.xsls](./Encuestas.xlsx), en el cuál cada entrevista estaba en una hoja del documento
-  - Para hacer esto, utilizé métodos Pandas para leer archivos .xsls y guardarlos en .csv, así como para unirlos todos en un solo archivo, a través de un loop. 
-  - Los métodos utilizados puede visulizarse [Aquí](./scraper_consolidate_surveys.ipynb)
-2. Tabular cada una de las respuestas de cada entrevista en distintas variables
-  - Para tabular las respuestas de cada entrevista, se utilizó la libería Regex. Con esta, se crearon funciones para cada pregunta en las que estaban los paths correspondients y las cuales retornan listas con las respuestas para cada pregunta en orden.
-  - Estas funciones se crearon en un archivo aparte, para facilitar la lectura del código, [Aquí](./scraper_helper.py)
- 3. Limpiar las variables resultantes de posibles errores de tabulación
-  - Para limpiar los datos, se utlizaron estructuras de control con loops con funciones de string y unicode. [Aquí](./scraper_consolidate_surveys.ipynb)
-  4. Consolidar todas las variables en una base de datos
-    - La base de datos se consolidó con la librería Pandas. Además también se utilizó su función de merge para unirla con otros datos que no estaban en las encuestas.
-    - También se utilizó esta librería para exportar la base de datos a 'pickle'
-    - El código está dispobible [Aquí](./scraper_consolidate_surveys.ipynb)
-  5. Analizar las variables necesarias para responder las preguntas planteadas
-    - Las variables se analizaron principalmente a través de gráficos creados con las librerías Matplotlist y Seaborne. A través de estas se hicieron gráficos de barra, gráficos cirulares y gráficos de dispersión que permitieron ilustrar los datos necesarios.
-    - El código está disponible [Aquí](./analysis_surveys.ipynb)    
-    
-Otros programas:
- *Además de los métodos mencionados, también se utilizaron programas con Tableau o wordclouds.com, que permitieron generar gráficos sobre los datos necesarios. El gráfico de Tableau se puede encontrar aquí:
-https://public.tableau.com/views/Tabla1_16222575049310/Hoja2?:language=es-ES&:display_count=n&:origin=viz_share_link
-    
+1. Mapear y georreferenciar la oferta de servicios y programas públicos y privados para jóvenes en Bogotá 
+2. Correlacionar la oferta y demanda de programas y servicios a jóvenes en Bogotá a nivel de localidades y UPZ
+3. Identificar zonas de atención prioritaria donde la demanda de servicios sociales para jóvenes sea alta y la oferta escasa.
 
 
 
 ## Hallazgos 
 
-- Se encontró que la mayoría de palmicultores tiene por encima de 40 años y existen muy pocos jóvenes. Esto podría sugerir que no se está dando un relevo generacional y las nuevas generaciones no están interesadas en el campo
+- Se encontraron y clasificaron 4659 servicios para jóvenes Bogotá
 
-- Se encuentra que en su mayoría, los proveedores de Palmas del Cesar S.A. son hombres. 
+- Las localidades con mayor concentración de iniciativas son Suba, Engativá, Kennedy y Ciudad Bolívar, pero en el análisis por cantidad de jóvenes estas localidades ocupan los últimos lugares, siendo reemplazadas por La Candelaria, Antionio Nariño, Los Mártires y Barrios Unidos. Esto indica que las localidades al sur de la ciudad, a pesar de concentrar una amplia oferta, tienen, proporciuonalmente, menos oferta que otras localidades en el norte y centro.
 
-- Se encuetra que los palmicultores tiene generalmente entre 2 y 4 hijos, mientras que su núcleo familiar tiende a tener 4 personas.
+- Se encuentra que la oferta de servicios y programas para jóvenes en proporción a la cantidad de jóvenes es menor en las localidades de Bosa, Ciudad Bolívar, Usaquén, Kennedy, Fontibón y Suba, las cuáles además son algunas de las localidades con mayor número de jóvenes en el Distrito.
 
-- La mayoría de los palmicultores tiene vivienda propia. Sin embargo, se encuentra que más de 20 de los encuestados aún no tienen todos los servicios públicos domiciliarios
+- Se encuentra una desconexión en las localidades respecto al tramo 1 y tramo 2. Es decir, varias de las localidades con mayor oferta en educación media son, a la vez, las localidades con menor oferta en educación para el trabajo, el cuál es el siguiente paso en el Modelo de Empleo Inclusivo.
 
-- Los palmicultores tienen en su mayoría un régimen contirbutivo de salud
+- Se evidencia que al realizar la comparación entre localidades y jóvenes con potencial existe una gran correlación de Spearman superior a 0.8 positiva; sin embargo, al ajustar las correlaciones a ser per cápita y/o por tramos se evidencia que la correlación disminuye. Esto da lugar a nuevas investigaciones que profundicen en estas correlaciones, analizando el progreso de las iniciativas existentes relacionadas en el tablero Power BI, al comparar los jóvenes con potencial existentes para los resultados de encuestas más recientes. 
 
-- Se encuentra que parece existir una correlación negativa entre número de hijos y nivel educativo. A medida que se avanza en los grados de escolaridad, los palmicultores tienden a tener menos hijos.
+- Las correlaciones positivas en tramo 1 y 3 respecto a la cantidad de jóvenes desconectados de la educación media y del mercado laboral, respectivamente, pueden responder a la relación con la demanda potencial. Es decir, aquellos territorios en los que se observan mayor cantidad de jóvenes desconectados en esos tramos reciben posteriormente las sedes de los servicios y programas respectivos.
 
-- Se encuentra que la mayoría de los palmicultores han sido víctimas del conflicto armado. En su mayoría, han sufrido de extorsiones, robos y desplazamiento forzado
+- Las correlaciones positivas en tramo 1 y 3 respecto a la cantidad de jóvenes desconectados de la educación media y del mercado laboral, respectivamente, pueden responder a la relación con la demanda potencial. Es decir, aquellos territorios en los que se observan mayor cantidad de jóvenes desconectados en esos tramos reciben posteriormente las sedes de los servicios y programas respectivos.
 
-- Los palmicultores se preocupan principalmente por temas de sanidad, transporte y costos de su cultivo. Estas preocupaciones se mantienen a pesar de que los palmicultores tengan otras fuentes de ingreso.
+## Territorios a priorizar
+
+- La oferta de servicios y programas para jóvenes en proporción a la cantidad de jóvenes es menor en las localidades de Bosa, Ciudad Bolívar, Usaquén, Kennedy, Fontibón y Suba.
+
+- Desconexión entre tramo 1 y tramo 2 en Ciudad Bolívar, Usme y Rafael Uribe Uribe.
+
+- Alto número de jóvenes desconectados de la educación media y poca oferta en el tramo 1, como en las UPZ de La Flora (Usme), Jerusalén(Ciudad Bolívar), Corabastos (Kennedy) y Patio Bonito (Kennedy).
+
+- Modelia (Fontibón), Restrepo (Antonio Nariño), San Rafael (Puente Aranda), Teusaquillo (Teusaquillo), Bolivia (Engativá) y Timiza (Kennedy) contienen una alta cantidad de jóvenes desconectados del mercado laboral y a la vez pocas sedes de iniciativas de intermediación.
+
+- Posible desconexión entre la demanda del tramo 2 y la oferta de servicios y programas. Esta desconexión es especialmente dramática en las localidades de Usme, Ciudad Bolívar, San Cristóbal y Bosa
 
 A continuación, se muestran solo algunas de las gráficas, para consultarlas todas, igresar [Aquí](./images)
 
